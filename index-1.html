@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Meu Formulário</h1>
+        <h2 style="color: red;" id="error-message"></h2>
+        <h2 style="color: green;" id="success-message"></h2>
+        <p>Atenção: todos os campos são obrigatórios.</p>
+        <form>
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome" value="" required><br>
+
+            <label for="idade">Idade:</label><br>
+            <input type="number" id="idade" name="idade" value="" required><br><br>
+        </form>
+
+        <button onclick="enviar()">
+            Enviar
+        </button>
+
+        <script>
+            function enviar() {
+                var idade = document.getElementById("idade").value;
+                var nome = document.getElementById("nome").value;
+
+                if (idade == null || idade == '' || nome == null || nome == '') {
+                    document.getElementById("error-message").innerHTML = "Pô, meu patrão, lembre que todos os campos são obrigatórios...";
+                    document.getElementById("success-message").innerHTML = "";
+                } else {
+                    document.getElementById("error-message").innerHTML = "";
+                    document.getElementById("success-message").innerHTML = "Sucesso, meu patrão";
+                }
+            }
+        </script>
+
+    </body>
+</html>
